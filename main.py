@@ -8,12 +8,14 @@ def get_pokemon_data(pokemon_name):
     print(response.status_code)
 
     types = [t["type"]["name"] for t in data["types"]]
+    sprite = data["sprites"]["front_default"]
 
     pokemon_height_weight = {
         "name": data["name"],
         "height": data["height"],
         "weight": data["weight"],
-        "types": types
+        "types": types,
+        "sprite": sprite
     }
 
     print(pokemon_height_weight)
